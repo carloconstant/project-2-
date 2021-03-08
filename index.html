@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>veruz-site</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,35 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>Debate to hearts content</h1>
+      <main>
+
+        <form id="sign-in">
+          <h2>sign in</h2>
+          <input name="credentials[email]" type="text" placeholder="an@example.email">
+          <input name="credentials[password]" type="password" placeholder="an example password">
+          <button type ="submit">submit</button>
+        </form>
+        <hr>
+
+        <form id= "sign-up">
+          <h2>sign up</h2>
+          <input  type="text" name="credentials[userName]" placeholder="User Name">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password]" type="password" placeholder="Confirm Password">
+          <button type ="submit">submit</button>
+        </form>
+<!-- try to put in a menu -->
+        <form id = "change-password">
+          <h2>Change Password</h2>
+          <input name="passwords[old]" type="password" placeholder="old password">
+          <input name="passwords[new]" type="password" placeholder ="new password">
+          <button type ="submit">submit</button>
+        </form>
+        <div id ="message"></div>
+        <hr>
+        <button id = "sign-out" type="submit">sign out</button>
+
+      </main>
     </body>
 </html>
