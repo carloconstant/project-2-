@@ -29,13 +29,13 @@ const onShowSuccess = function (responseData) {
   $('form').trigger('reset')
 }
 const onCreateSuccess = function () {
-  $('#create-message').html('you have successfully created a topic')
-  $('#create-message').addClass('success')
+  $('#message').html('you have successfully created a topic')
+  $('#message').addClass('success')
 
   $('#topics-display').html('new topic created check at get all')
   $('form').trigger('reset')
   setTimeout(() => {
-    $('#create-message').html('')
+    $('#message').html('')
     $('#create-message').removeClass('success')
   }, 5000)
 }
