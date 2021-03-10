@@ -14,10 +14,10 @@
     <body>
       <h1>Debate to hearts content</h1>
       <main>
-
+<div id = "login">
         <form id="sign-in">
           <h2>sign in</h2>
-          <input name="credentials[email]" type="text" placeholder="an@example.email">
+          <input name="credentials[email]" type="text" placeholder="Username">
           <input name="credentials[password]" type="password" placeholder="an example password">
           <button type ="submit">submit</button>
         </form>
@@ -25,22 +25,55 @@
 
         <form id= "sign-up">
           <h2>sign up</h2>
-          <input  type="text" name="credentials[userName]" placeholder="User Name">
+          <input  type="text" name="credentials[email]" placeholder="Username">
           <input name="credentials[password]" type="password" placeholder="Password">
-          <input name="credentials[password]" type="password" placeholder="Confirm Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
           <button type ="submit">submit</button>
         </form>
+  </div>
+  <div id ="message"></div>
+
 <!-- try to put in a menu -->
+<div id = "topic-page">
+  <div id = "menu">
         <form id = "change-password">
           <h2>Change Password</h2>
-          <input name="passwords[old]" type="password" placeholder="old password">
-          <input name="passwords[new]" type="password" placeholder ="new password">
-          <button type ="submit">submit</button>
+          <input name="passwords[old]" type="password" placeholder="old password" required>
+          <input name="passwords[new]" type="password" placeholder ="new password" required>
+          <button type ="submit">Change Password</button>
         </form>
-        <div id ="message"></div>
         <hr>
-        <button id = "sign-out" type="submit">sign out</button>
+        <form id = "sign-out">
+          <button type="submit">sign out</button>
+        </form>
+        <hr>
+  </div>
+        <form id = "topics">
+          <h3>All Topics</h3>
+          <button id="topic-index">get topics</button>
+        </form>
+        <hr>
 
+        <form id="show-topic">
+          <h3>Search By Id</h3>
+          <input type="text" name="topic[id]" placeholder="ID here" required>
+          <button type="submit">search</button>
+        </form>
+        <hr>
+
+        <form id="create-topic">
+          <h3>Create a Topic</h3>
+          <input type="text" name = "topic[title]" placeholder="Title">
+          <input type="text" name = "topic[side1]" placeholder="Your side">
+          <input type="text" name="topic[side2]"  placeholder="Losing side">
+          <button type="submit">Create</button>
+          <div id="create-message"></div>
+        </form>
+</div>
+  <form id= "output">
+    <div id="error-message"></div>
+    <div id='topics-display'></div>
+  </form>
       </main>
     </body>
 </html>

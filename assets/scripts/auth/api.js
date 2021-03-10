@@ -28,7 +28,7 @@ const signOut = function (data) {
 
 const changePassword = function (data) {
   return $.ajax({
-    method: 'DELETE',
+    method: 'PATCH',
     url: config.apiUrl + '/change-password',
     data: data,
     headers: {

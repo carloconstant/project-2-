@@ -1,54 +1,45 @@
 'use strict'
 const store = require('./../store')
-const api = require('./api')
-const functions = require('./functions')
 
-const signUpSuccess = function (data) {
+const signUpSuccess = function (response) {
   $('#message').text('Thank you for signing up.')
   $('#sign-up').trigger('reset')
-  $('#sign-in').hide()
-  $('#sign-up').hide()
-  $('#sign-out').hide()
-  $('#change-password').show()
+
+  $('#topic-page').show()
+  $('#login').hide()
 }
-const signUpFailure = function (data) {
+const signUpFailure = function (response) {
   $('#message').text('Sign Up failed, try again.')
 }
 
-const signInSuccess = function (data) {
-  store.user = data.user
+const signInSuccess = function (response) {
+  store.user = response.user
   $('#message').text('Welcome')
   $('#sign-in').trigger('reset')
-  $('#change-password').show()
-  $('#sign-out').hide()
-  $('#sign-in').hide()
-  $('#sign-up').hide()
+
+  $('#topic-page').show()
+  $('#login').hide()
 }
 
-const signInFailure = function (data) {
+const signInFailure = function (response) {
   $('#message').text('Sign in failed, try again.')
 }
-const changePasswordSuccess = function () {
+const changePasswordSuccess = function (response) {
   $('#message').text('your password was changed')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-
   $('#change-password').trigger('reset')
 }
 const changePasswordFailure = function (error) {
-  $('message').text('that was not your password')
-  $('message').removeClass()
-  $('message').addClass()
+  $('#message').text('that was not your password')
   console.error('you made a mistake ', error)
 }
 const signOut = function (event) {
-  $('message').text('you signed out')
+  $('#message').text('you signed out')
   $('#sign-out').trigger('reset')
 
-  $('#change-password').hide()
-  $('#sign-up').show()
-  $('#sign-in').show()
+  $('#topic-page').hide()
+  $('#login').show()
 }
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
