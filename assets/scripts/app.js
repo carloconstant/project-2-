@@ -8,7 +8,7 @@ $(() => {
   $('#sign-up').on('submit', auth.onSignUp)
   $('#sign-in').on('submit', auth.onSignIn)
   $('#sign-out').on('submit', auth.onSignOut)
-  $('#topic-index').on('submit', topic.onIndexTopic)
+  $('#topics').on('submit', topic.onIndexTopics)
   $('#show-topic').on('submit', topic.onShowTopic)
   $('#create-topic').on('submit', topic.onCreateTopic)
   $('#change-password').on('submit', auth.onChangePassword)

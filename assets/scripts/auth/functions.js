@@ -5,12 +5,15 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onSignUp = function (event) {
   event.preventDefault()
-
+  console.log('signup')
+  console.log(event)
   const form = event.target
   const data = getFormFields(form)
 
   api.signUp(data)
     .then(ui.signUpSuccess)
+    .then(() => api.signIn(data))
+    .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 

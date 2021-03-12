@@ -1,5 +1,6 @@
 'use strict'
 const onIndexSuccess = function (reponseData) {
+console.log("get success")
   const topics = reponseData.topics
 
   let topicsHtml = ''
@@ -9,7 +10,7 @@ const onIndexSuccess = function (reponseData) {
     <h4>Title: ${topic.title}</h4>
     <h5>side1: ${topic.side1}</h5>
     <h5>side2: ${topic.side2}<h5>
-    <p>ID: ${topic._.id}</p>
+    <p>ID: ${topic._id}</p>
   `
   })
   $('#topics-display').html(topicsHtml)
@@ -41,11 +42,11 @@ const onCreateSuccess = function () {
 }
 const onError = function (err) {
   console.error(err)
-  $('#error-message').html('<h4>Something went wrong, please try again.</h4>')
-  $('#error-message').addClass('failure')
+  $('#message').html('<h4>Something went wrong, please try again.</h4>')
+  $('#message').addClass('failure')
   setTimeout(() => {
-    $('#error-message').html('')
-    $('#error-message').removeClass('failure')
+    $('#message').html('')
+    $('#message').removeClass('failure')
   }, 5000)
 }
 module.exports = {

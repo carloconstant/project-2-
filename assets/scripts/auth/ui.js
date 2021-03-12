@@ -7,6 +7,7 @@ const signUpSuccess = function (response) {
 
   $('#topic-page').show()
   $('#login').hide()
+  return response
 }
 const signUpFailure = function (response) {
   $('#message').text('Sign Up failed, try again.')
@@ -14,7 +15,8 @@ const signUpFailure = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('Welcome')
+  console.log(response)
+  $('#message').text('Welcome Back')
   $('#sign-in').trigger('reset')
 
   $('#topic-page').show()

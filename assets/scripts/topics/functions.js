@@ -1,8 +1,9 @@
 const api = require('./api')
-const ui = require('./api')
+const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
-const onIndexTopics = function () {
+const onIndexTopics = function (event) {
+  event.preventDefault()
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onError)
@@ -13,7 +14,7 @@ const onShowTopic = function (event) {
   const formData = getFormFields(form)
 
   api.show(formData.topic.id)
-    .then(ui.onShowTopic)
+    .then(ui.onShowSuccess)
     .catch(ui.onError)
 }
 const onCreateTopic = function (event) {
