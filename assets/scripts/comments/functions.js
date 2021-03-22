@@ -1,23 +1,24 @@
+'use strict'
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 
-const onIndexTopics = function (event) {
+const onIndexComments = function (event) {
   event.preventDefault()
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.onError)
 }
-const onShowTopic = function (event) {
+const onShowComment = function (event) {
   event.preventDefault()
   const form = event.target
   const formData = getFormFields(form)
 
-  api.show(formData.topic.id)
+  api.show(formData.comment.id)
     .then(ui.onShowSuccess)
     .catch(ui.onError)
 }
-const onCreateTopic = function (event) {
+const onCreateComment = function (event) {
   event.preventDefault()
 
   const form = event.target
@@ -27,28 +28,38 @@ const onCreateTopic = function (event) {
     .then(ui.onCreateSuccess)
     .catch(ui.onError)
 }
-const onUpdateTopic = function (event) {
+const onUpdateComment = function (event) {
   event.preventDefault()
 
   const form = event.target
   const formData = getFormFields(form)
-  const id = formData.topic.id
+  const id = formData.comment.id
   api.update(id, formData)
     .then(ui.onUpdateSuccess)
     .catch(ui.onError)
 }
-const onDeleteTopic = function (event) {
+const onDeleteComment = function (event) {
   event.preventDefault()
   const formData = getFormFields(event.target)
 
-  api.deleted(formData.topic.id)
+  api.deleted(formData.comment.id)
     .then(ui.onDeleteSuccess)
     .catch(ui.onError)
 }
+const onDynamicUpdateComment = function (event) {
+  event.preventDefault()
+  const updateForm = event.target
+  const id = $(updateForm).data('id')
+  const formData = getFormFields(event.target)
+  api.update(id, formData)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onError)
+}
 module.exports = {
-  onIndexTopics,
-  onShowTopic,
-  onCreateTopic,
-  onUpdateTopic,
-  onDeleteTopic
+  onDeleteComment,
+  onIndexComments,
+  onShowComment,
+  onCreateComment,
+  onUpdateComment,
+  onDynamicUpdateComment
 }

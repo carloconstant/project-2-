@@ -6,6 +6,7 @@ const signUpSuccess = function (response) {
   $('#sign-up').trigger('reset')
 
   $('#topic-page').show()
+  $('#comment-page').show()
   $('#login').hide()
   return response
 }
@@ -20,6 +21,7 @@ const signInSuccess = function (response) {
   $('#sign-in').trigger('reset')
 
   $('#topic-page').show()
+  $('#comment-page').show()
   $('#login').hide()
 }
 
@@ -39,6 +41,8 @@ const signOut = function (event) {
   $('#sign-out').trigger('reset')
 
   $('#topic-page').hide()
+  $('#topics-display').hide()
+  $('#comment-page').hide()
   $('#login').show()
 }
 

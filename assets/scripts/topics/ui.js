@@ -1,6 +1,6 @@
 'use strict'
 const onIndexSuccess = function (reponseData) {
-console.log("get success")
+  console.log('get success')
   const topics = reponseData.topics
 
   let topicsHtml = ''
@@ -40,8 +40,18 @@ const onCreateSuccess = function () {
     $('#create-message').removeClass('success')
   }, 5000)
 }
-const onError = function (err) {
-  console.error(err)
+const onUpdateSuccess = function (responseData) {
+  $('#message').html('Update complete!')
+  $('#topics-display').html('changes: ')
+  $('#update-message').addClass('success')
+  setTimeout(() => {
+    $('#update-message').html('')
+    $('#update-message').removeClass('success')
+  }, 5000)
+  $('form').trigger('reset')
+}
+const onError = function (error) {
+  console.error(error)
   $('#message').html('<h4>Something went wrong, please try again.</h4>')
   $('#message').addClass('failure')
   setTimeout(() => {
@@ -49,9 +59,30 @@ const onError = function (err) {
     $('#message').removeClass('failure')
   }, 5000)
 }
+// const commentPage = function () {
+//   $('#message').html('you have made it to the comments page')
+//   $('#topic-page').hide()
+//   $('#login').hide()
+//   $('#comment-page').show()
+// }
+const onDeleteSuccess = function () {
+  $('#delete-message').html('the comment was deleted')
+  $('#topics-display').html('check the comments for the update')
+  $('#delete-message').addClass('success')
+
+  setTimeout(() => {
+    $('#delete-message').html('')
+    $('#delete-message').removeClass('success')
+  }, 5000)
+
+  $('form').trigger('reset')
+}
 module.exports = {
+  onDeleteSuccess,
+  // commentPage,
   onIndexSuccess,
   onShowSuccess,
   onError,
-  onCreateSuccess
+  onCreateSuccess,
+  onUpdateSuccess
 }
