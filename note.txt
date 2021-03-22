@@ -1,0 +1,35 @@
+{"user": {
+  "_id":"604253b6d59fc43d048865f6",
+  "email":"C@AOL.COM",
+  "createdAt":"2021-03-05T15:52:22.825Z",
+  "updatedAt":"2021-03-05T15:52:22.825Z",
+  "__v":0
+  }
+}
+"token":"2e8d6fe2b878c815c617a02117f3c003"
+
+
+[{"_id":
+  "604255de92477a4ee8bcdc62",
+  "title":"should we pay taxes3",
+  "owner":"604253b6d59fc43d048865f6",
+  "createdAt":"2021-03-05T16:01:34.690Z",
+  "updatedAt":"2021-03-05T16:01:34.690Z",
+  "__v":0
+},
+{"_id":
+  "60426501dc4f58366c6e1d41",
+  "title":"is debt good or bad",
+  "owner":"604253b6d59fc43d048865f6",
+  "createdAt":"2021-03-05T17:06:09.638Z",
+  "updatedAt":"2021-03-05T17:06:09.638Z",
+  "__v":0
+},
+{"_id":
+  "6042654fdc4f58366c6e1d42",
+  "title":"Are video games good or bad for us",
+  "owner":"604253b6d59fc43d048865f6",
+  "createdAt":"2021-03-05T17:07:27.926Z",
+  "updatedAt":"2021-03-05T17:07:27.926Z",
+  "__v":0
+}]

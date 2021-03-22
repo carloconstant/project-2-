@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>veruz-site</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <h1>Debate to hearts content</h1>
+      <main>
+<div id = "login">
+        <form id="sign-in">
+          <h2>sign in</h2>
+          <input name="credentials[email]" type="text" placeholder="Username">
+          <input name="credentials[password]" type="password" placeholder="an example password">
+          <button type ="submit">submit</button>
+        </form>
+        <hr>
+
+        <form id= "sign-up">
+          <h2>sign up</h2>
+          <input  type="text" name="credentials[email]" placeholder="Username">
+          <input name="credentials[password]" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" type="password" placeholder="Confirm Password">
+          <button type ="submit">submit</button>
+        </form>
+  </div>
+  <div id ="message"></div>
+
+<!-- try to put in a menu -->
+<div id = "topic-page">
+  <nav id = "menu">
+        <form id = "change-password">
+          <h2>Change Password</h2>
+          <input name="passwords[old]" type="password" placeholder="old password" required>
+          <input name="passwords[new]" type="password" placeholder ="new password" required>
+          <button type ="submit">Change Password</button>
+        </form>
+        <hr>
+        <form id = "sign-out">
+          <button type="submit">sign out</button>
+        </form>
+        <hr>
+  </nav>
+        <form id = "topics">
+          <h3>All Topics</h3>
+          <button id="topic-index">get topics</button>
+        </form>
+        <hr>
+
+        <form id="show-topic">
+          <h3>Search By Id</h3>
+          <input type="text" name="topic[id]" placeholder="ID here" required>
+          <button type="submit">search</button>
+        </form>
+        <hr>
+
+        <form id="create-topic">
+          <h3>Create a Topic</h3>
+          <input type="text" name = "topic[title]" placeholder="Title">
+          <input type="text" name = "topic[side1]" placeholder="Your side">
+          <input type="text" name="topic[side2]"  placeholder="Losing side">
+          <button type="submit">Create</button>
+          <div id="create-message"></div>
+        </form>
+        <hr>
+
+        <form id="update-topic">
+          <h3>Update a Topic</h3>
+          <input type="text" name="topic[id]" placeholder="ID" required>
+          <input type="text" name="topic[title]" placeholder="Title">
+          <input type="text" name="topic[side1]" placeholder="Your side">
+          <input type="text" name="topic[side2]" placeholder="Losing side">
+          <button type="submit">update</button>
+          <div id="update-message"></div>
+        </form>
+        <hr>
+
+        <form id="delete-topic">
+          <h3>Delete a topic</h3>
+          <input type="text" name="topic[id]" placeholder="topic id:" required>
+          <button type='submit'>Delete</button>
+          <div id="delete-message"></div>
+        </form>
+</div>
+<div id="gifs">
+  <img src="https://media.giphy.com/media/l2JeeBlFwmbE742Ri/giphy.gif">
+  <img src="https://media.giphy.com/media/xT0BKpqAaJczduXXJ6/giphy.gif">
+    <!-- deadpool -->
+</div>
+<!-- <div id="comment-page">
+  <form id = "comments">
+    <h3>All comments</h3>
+    <button id="comment-index">get topics</button>
+  </form>
+  <hr>
+
+  <form id="show-comment">
+    <h3>Search By Id</h3>
+    <input type="text" name="comment[id]" placeholder="ID here" required>
+    <button type="submit">search</button>
+  </form>
+  <hr>
+
+  <form id="create-comment">
+    <h3>Create a comment</h3>
+    <input type="text" name = "topic[topic]" placeholder="topic">
+    <input type="text" name="post[post]"  placeholder="Your comments">
+    <button type="submit">Create</button>
+    <div id="create-comment-message"></div>
+  </form>
+  <hr>
+
+  <form id="update-comment">
+    <h3>Update a comment</h3>
+    <input type="text" name="user[user]" placeholder="ID" required>
+    <input type="text" name="topic[topic]" placeholder="Topic">
+    <input type="text" name="post[post]" placeholder="New comment">
+    <button type="submit">update</button>
+    <div id="update-comment-message"></div>
+  </form>
+  <hr>
+  <form id="delete-comment">
+    <h3>Delete a comment</h3>
+    <input type="text" name="comment[id]" placeholder="comment id:" required>
+    <button type='submit'>Delete</button>
+    <div id="delete-message"></div>
+  </form>
+</div> -->
+<!-- <div style="width:100%;height:0;padding-bottom:75%;position:relative;">
+  <iframe src="https://giphy.com/embed/l2JeeBlFwmbE742Ri" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen>
+  </iframe>
+</div> -->
+<!-- <p><a href="https://giphy.com/gifs/season-12-the-simpsons-12x1-l2JeeBlFwmbE742Ri">via GIPHY</a></p> -->
+
+  <form id= "output">
+    <div id="error-message"></div>
+    <div id='topics-display'></div>
+    <!-- <button id='comments-page'>comments</button>
+    <div id='comments-display'></div> -->
+
+  </form>
+      </main>
+    </body>
+</html>
